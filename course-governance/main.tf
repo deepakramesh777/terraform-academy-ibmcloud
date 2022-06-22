@@ -30,7 +30,7 @@ resource "null_resource" "schematics_apply" {
 
   provisioner "local-exec" {
     when    = create
-    command = "${path.module}/scripts/schematics_apply.sh"
+    command = "chmod +x ${path.module}/scripts/schematics_apply.sh; ${path.module}/scripts/schematics_apply.sh"
 
     environment = {
       API_KEY        = var.ibmcloud_api_key
